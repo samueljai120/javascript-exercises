@@ -1,9 +1,21 @@
 const sumAll = function(start, end) {
     let finalSum = [];
-    for (let i = start; i <= end; i++) {
-        finalSum.push(i);
+
+    if (typeof (start && end) === "number"){
+        if (start > end) {
+            for (let i = end; i <= start; i++) {
+                finalSum.push(i);
+            }
+        } else if (end > start) {
+            for (let i = start; i <= end; i++) {
+                finalSum.push(i);
+            }
+        }
+   
+        return finalSum.reduce((prev,curr) => prev + curr, 0)
     }
-    return finalSum.reduce((prev,curr) => prev + curr, 0)
+
+    
 
 };
 
