@@ -1,20 +1,23 @@
 const sumAll = function(start, end) {
     let finalSum = [];
-
-    if (typeof (start && end) === "number"){
-        if (start > end) {
+    if (start > -1 && end > -1){
+    let sum = [];
+    
+    if (start > end) {
             for (let i = end; i <= start; i++) {
-                finalSum.push(i);
+                sum.push(i);
             }
         } else if (end > start) {
             for (let i = start; i <= end; i++) {
-                finalSum.push(i);
+                sum.push(i);
             }
-        }
-   
-        return finalSum.reduce((prev,curr) => prev + curr, 0)
-    }
 
+        }
+        const sumT = sum.reduce((prev,curr) => prev + curr, 0)
+        finalSum.push(sumT);
+    }
+       
+    return finalSum
     
 
 };
