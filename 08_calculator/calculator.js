@@ -1,38 +1,36 @@
 const add = function(a,b) {
-	return a + b
+	return a + b;
 };
 
 const subtract = function(a,b) {
-	return a - b
+	return a - b;
 };
 
-const sum = function(array) {
-	return array.reduce((prev,curr) => prev + curr, 0)
+const sum = function(e) {
+	let sum = 0;
+  e.forEach(el => sum += el);
+  return sum;
 };
 
-const multiply = function(array) {
-  return array.reduce((prev,curr) => (prev * curr))
+const multiply = function(e) {
+	return e.reduce((curr,prev) => curr * prev);
+
 };
 
 const power = function(a,b) {
 	return Math.pow(a,b)
 };
 
-const factorial = function(num) {
-  if (num >= 0 && num <= 1){
-    return 1;
-  } else {
-    return num * factorial(num-1);
+const factorial = function(e) {
+  let fac = 1;
+  if (e === 0 || e === 1){
+    fac = 1;
+  } else if ( e > 0){
+    for (let i = 1; i <= e; i++){
+      fac *= i;
+    }
   }
-	// let factorial = [];
-  // while(num > 0){
-  //   factorial.push(num);
-  //   num--;
-  // }
-  // // for (let i = num, i > 0; i--){
-  // //   factorial.push(i);
-  // // }
-  // return multiply(factorial)
+  return fac
 };
 
 // Do not edit below this line
